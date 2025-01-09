@@ -1,0 +1,12 @@
+build
+dist
+.DS_Store
+*.env
+*.log
+.next/
+next-env.d.ts
+node_modules
+out
+*.pem
+*.tmp
+tmp
