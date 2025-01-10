@@ -2,8 +2,8 @@
  * if there is a title, find it
  */
 
-function findTitle(entry:any):string {
-
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+function findTitle(entry: any): string {
     // https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap
     if (entry["news:news"]) {
         return entry["news:news"]["news:title"];

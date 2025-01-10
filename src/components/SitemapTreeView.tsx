@@ -69,11 +69,9 @@ const CustomTreeItem = React.forwardRef(function CustomTreeItem(
 
 export default function BasicRichTreeView({ items }: SitemapTreeViewProps) {
   return (
-    <Box sx={{ height: '100%', minWidth: 250, backgroundColor: '#eeeeee' }}>
       <RichTreeView
         expansionTrigger="iconContainer"
         slots={{ item: CustomTreeItem }}
         items={items} onItemClick={onClick} />
-    </Box>
   );
 }

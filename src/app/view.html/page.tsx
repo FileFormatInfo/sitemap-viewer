@@ -1,8 +1,6 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-//import NextLink from 'next/link';
-import { TreeViewBaseItem } from '@mui/x-tree-view/models';
 
 import SitemapTreeView from '@/components/SitemapTreeView';
 import NavBar from '@/components/NavBar';
@@ -10,6 +8,7 @@ import { constants } from '@/lib/constants';
 import { getFirst } from '@/lib/getFirst';
 import { loadSitemap } from '@/lib/loadSitemap';
 import { SitemapEntry, TreeItem } from '@/lib/types';
+import { MdBugReport } from 'react-icons/md';
 
 
 export default async function View({
@@ -19,64 +18,77 @@ export default async function View({
 }) {
 
     const urlParams = (await searchParams);
+    const debug = getFirst(urlParams['debug'], '0') === '1';
     const title = getFirst(urlParams['title'], 'Site Map');
     let url_str = getFirst(urlParams['url'], constants.RANDOM_VALID_URL);
     if (!url_str || url_str === constants.DEFAULT_SITEMAP_URL) {
         url_str = constants.RANDOM_VALID_URL;
     }
+    const sort = getFirst(urlParams['sort'], 'original');
 
     const sme = await loadSitemap(url_str);
+    if (sort == "url") {
+        sme.entries.sort((a, b) => { return a.url.localeCompare(b.url); });
+    }
     const items = listToTree(sme.entries);
+    if (sort == "name") {
+        sortTree(items);
+    }
     return (
-        <Container maxWidth="lg" sx={{ backgroundColor: '#ff0000', minHeight: '100vh' }}>
-            <NavBar title={title} />
+        <Container maxWidth="lg" disableGutters={true} sx={{ minHeight: '100vh' }}>
+            <NavBar debug={debug} title={title} exitUrl="/" />
             <Box
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
-                    backgroundColor: '#00dd00'
                 }}
             >
                 {sme.success ? <SitemapTreeView items={items} /> : <h1>Failed to load sitemap</h1>}
-
             </Box>
         </Container>
     );
 }
 
+function sortTree(items: TreeItem[]) {
+    if (items.length == 0) {
+        return;
+    }
+    if (items.length > 1) {
+        items.sort((a, b) => a.label.localeCompare(b.label));
+    }
+
+    for (const item of items) {
+        sortTree(item.children);
+    }
+}
+
 function listToTree(entries: SitemapEntry[]): TreeItem[] {
-
-    entries.sort((a, b) => { return a.url.localeCompare(b.url); });
-
 
     const root: TreeItem[] = [];
 
     for (const entry of entries) {
 
-        let parent: TreeItem[];
-        parent = findOrCreateParents(root, entry.directory);
+        const parent = findOrCreateParents(root, entry.directory);
 
-        let item = parent.find((item) => item.filename == entry.filename);
+        const item = parent.find((item) => item.filename == entry.filename);
         if (item) {
             // this happens when a directory entry is found after a file entry from that directory
             item.id = entry.url;
             item.hasEntry = true;
             item.label = entry.name
-            continue;
         } else {
-            const item: TreeItem = {
+            const new_item: TreeItem = {
                 id: entry.url,
                 filename: entry.filename,
                 label: entry.name,
                 children: [],
                 hasEntry: true,
             };
-            parent.push(item);
+            parent.push(new_item);
         }
     }
     return root;
 }
-
 
 function findOrCreateParent(
     parent: TreeItem[],

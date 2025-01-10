@@ -1,4 +1,4 @@
-const defaultPaths: Set<String> = new Set([
+const defaultPaths: Set<string> = new Set([
     "default.htm",
     "default.html",
     "index.htm",

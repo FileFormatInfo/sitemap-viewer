@@ -1,4 +1,4 @@
-const extensions: Set<String> = new Set([
+const extensions: Set<string> = new Set([
     "htm",
     "html",
     "txt",

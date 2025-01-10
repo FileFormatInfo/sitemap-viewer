@@ -29,3 +29,21 @@ This is a graphical sitemap viewer for [Sitemap.Style](https://www.sitemap.style
 
 * [MUI](https://mui.com/material-ui/) - React components
 * [Twemoji](https://github.com/twitter/twemoji) - favicon
+
+## To Do
+
+- [ ] debug modal
+- [ ] "powered by" hyperlink floater at the bottom on the tree
+- [ ] footer with source, contact, etc at the bottom of the home page
+- [ ] 404 page formatting
+- [ ] loading spinner
+- [ ] `title` to allow markdown
+- [ ] `title` to have variables for `host`, `barehost`
+- [ ] name: punctuation to space
+- [ ] name option: title case
+- [ ] flag for show debug icon in navbar: shows `messages[]`
+- [ ] move ModeSwitch someplace unobtrusive
+- [ ] custom text instead of "Home"
+- [ ] sort option `homename` to be name, but "Home" at top
+- [ ] sort option: directories first
+- [ ] demo button that loads local test sitemap.xml

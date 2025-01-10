@@ -88,6 +88,7 @@ async function processUrl(
     const xml_str = await xml_resp.text();
     retVal.messages.push(`JS string length: ${xml_str.length}`);
 
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
     let xml_data: any;
     const parser = new XMLParser();
     try {
@@ -111,6 +112,7 @@ async function processUrl(
     return new_maps;
 }
 
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 function processSitemap(retVal: SitemapData, sitemap: string, data: any) {
     if (!data.urlset.url) {
         retVal.errorCount++;

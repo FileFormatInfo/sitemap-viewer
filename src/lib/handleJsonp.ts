@@ -1,10 +1,10 @@
 function handleJsonp(request: Request, data: unknown):Response {
     const jsonStr = JSON.stringify(data); //, null, 2);
     let body: string;
-    let headers:HeadersInit = {};
+    const headers:HeadersInit = {};
 
     const me = new URL(request.url);
-    let callback = me.searchParams.get("callback");
+    const callback = me.searchParams.get("callback");
     if (callback) {
         headers["Content-Type"] = "application/javascript";
         body = `${callback}(${jsonStr})`;

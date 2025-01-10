@@ -2,14 +2,17 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import NextLink from 'next/link';
 import ProTip from '@/components/ProTip';
 import Copyright from '@/components/Copyright';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+
 import { constants } from '@/lib/constants';
+import SortSelect from '@/components/SortSelect';
 
 export default function Home() {
     return (
@@ -24,7 +27,6 @@ export default function Home() {
                 }}
             >
                 <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-                    <NextLink href="https://www.sitemap.style/">Sitemap.Style</NextLink>'s
                     Sitemap Viewer
                 </Typography>
                 <form action="/view.html" method="get" style={{ width: '100%' }}>
@@ -33,10 +35,28 @@ export default function Home() {
                         id="url"
                         label="URL of your sitemap.xml"
                         name="url"
-                        sx={{ mt: 6 }}
+                        sx={{ mt: 2 }}
                         defaultValue={constants.DEFAULT_SITEMAP_URL}
                     />
-                    <Stack direction="row" spacing={2} justifyContent="center" sx={{ mt: 2 }}>
+                    <TextField
+                        fullWidth
+                        id="title"
+                        label="Title (optional)"
+                        name="title"
+                        sx={{ mt: 2 }}
+                        defaultValue={constants.DEFAULT_TITLE}
+                    />
+                    <TextField
+                        fullWidth
+                        id="exit"
+                        label="Exit destination URL (optional)"
+                        name="exit"
+                        sx={{ mt: 2 }}
+                        defaultValue="/"
+                    />
+                    <SortSelect />
+                    <FormControlLabel control={<Checkbox name="debug" value="1" defaultChecked />} label="Debugging" />
+                    <Stack direction="row" spacing={2} justifyContent="flex-start" sx={{ mt: 2 }}>
                         <Button variant="contained" type="submit">
                             View
                         </Button>
