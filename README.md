@@ -1,5 +1,7 @@
 # Sitemap Viewer [<img alt="Sitemap Viewer logo" src="public/favicon.svg" height="90" align="right" />](https://view.sitemap.style/)
 
+[![deploy](https://github.com/fileformat/view.sitemap.style/actions/workflows/gcr-deploy.yaml/badge.svg)](https://github.com/fileformat/view.sitemap.style/actions/workflows/gcr-deploy.yaml)
+
 This is a graphical sitemap viewer for [Sitemap.Style](https://www.sitemap.style/).
 
 ## Running locally

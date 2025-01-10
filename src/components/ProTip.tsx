@@ -19,7 +19,7 @@ export default function ProTip() {
       <Link href="https://www.sitemap.style/">Sitemap.Style</Link>
       {' '} for how to integrate this into your website.
       <a href="https://github.com/fileformat/view.sitemap.style">
-        <img src="https://www.vectorlogo.zone/logos/github/github-tile.svg" style={{height: '16pt', margin: '4pt', verticalAlign: 'middle'}} />
+        <img alt="github icon" src="https://www.vectorlogo.zone/logos/github/github-tile.svg" style={{height: '16pt', margin: '4pt', verticalAlign: 'middle'}} />
       </a>
     </Typography>
   );

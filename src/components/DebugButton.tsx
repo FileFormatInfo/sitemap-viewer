@@ -1,6 +1,5 @@
 'use client';
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -50,7 +49,7 @@ function DebugDialog(props: DebugDialogProps) {
 
 export default function DebugButton() {
     const [open, setOpen] = React.useState(false);
-
+/*
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -58,7 +57,7 @@ export default function DebugButton() {
     const handleClose = (value: string) => {
         setOpen(false);
     };
-
+*/
     return (
         <>
             <MdBugReport onClick={() => setOpen(true)} size={32} />

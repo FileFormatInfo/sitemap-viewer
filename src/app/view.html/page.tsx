@@ -8,8 +8,6 @@ import { constants } from '@/lib/constants';
 import { getFirst } from '@/lib/getFirst';
 import { loadSitemap } from '@/lib/loadSitemap';
 import { SitemapEntry, TreeItem } from '@/lib/types';
-import { MdBugReport } from 'react-icons/md';
-
 
 export default async function View({
     searchParams,

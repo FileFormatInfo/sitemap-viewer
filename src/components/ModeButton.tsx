@@ -1,6 +1,5 @@
 'use client'
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -10,9 +9,7 @@ import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import { useColorScheme } from '@mui/material/styles';
-import PersonIcon from '@mui/icons-material/Person';
 import { blue } from '@mui/material/colors';
-import { MdBugReport } from 'react-icons/md';
 import { MdDarkMode, MdOutlinePhonelink, MdSunny } from "react-icons/md";
 import { IconType } from 'react-icons';
 
@@ -77,10 +74,6 @@ export default function DebugButton() {
     if (!mode) {
         return null;
     }
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
 
     const handleClose = (value: Mode | null) => {
         setOpen(false);
