@@ -3,6 +3,13 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+const sortOptions = [
+    { value: 'original', label: 'Original' },
+    { value: 'url', label: 'URL' },
+    { value: 'name', label: 'Name' },
+    { value: 'dirfirst', label: 'Name, but directories first' },
+];
+
 export default function SortSelect() {
     return (
             <FormControl fullWidth sx={{ mt: 2 }}>
@@ -18,9 +25,11 @@ export default function SortSelect() {
                     }}
                     label="Sort"
                 >
-                    <option value="original">Original</option>
-                    <option value="url">URL</option>
-                    <option value="name">Name</option>
+                    {sortOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
                 </Select>
             </FormControl>
     );

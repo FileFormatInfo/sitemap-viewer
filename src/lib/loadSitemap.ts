@@ -5,13 +5,14 @@ import { stripExtension } from "./stripExtension";
 import { findTitle } from "./findTitle";
 import { SitemapData, SitemapEntry } from "./types";
 
-async function loadSitemap(url_str: string):Promise<SitemapData> {
+async function loadSitemap(url_str: string, translations:{[key:string]:string}):Promise<SitemapData> {
     const retVal: SitemapData = {
         success: false,
         errorCount: 0,
         messages: [],
         sitemaps: [],
         entries: [],
+        translations,
     };
 
     if (!url_str) {
@@ -145,7 +146,7 @@ function processSitemap(retVal: SitemapData, sitemap: string, data: any) {
         let name: string = findTitle(entry);
         if (!name) {
             if (localpath === "/") {
-                name = "Home";
+                name = retVal.translations['home'] || "Home";
             } else {
                 const parts = localpath.split("/");
                 name = stripExtension(

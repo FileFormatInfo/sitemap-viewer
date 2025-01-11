@@ -8,6 +8,7 @@ import { constants } from '@/lib/constants';
 import { getFirst } from '@/lib/getFirst';
 import { loadSitemap } from '@/lib/loadSitemap';
 import { SitemapEntry, TreeItem } from '@/lib/types';
+import PoweredBy from '@/components/PoweredBy';
 
 export default async function View({
     searchParams,
@@ -18,36 +19,45 @@ export default async function View({
     const urlParams = (await searchParams);
     const debug = getFirst(urlParams['debug'], '0') === '1';
     const title = getFirst(urlParams['title'], 'Site Map');
+    const home = getFirst(urlParams['home'], 'Home');
     let url_str = getFirst(urlParams['url'], constants.RANDOM_VALID_URL);
     if (!url_str || url_str === constants.DEFAULT_SITEMAP_URL) {
         url_str = constants.RANDOM_VALID_URL;
     }
     const sort = getFirst(urlParams['sort'], 'original');
 
-    const sme = await loadSitemap(url_str);
+    const sme = await loadSitemap(url_str, { home });
     if (sort == "url") {
         sme.entries.sort((a, b) => { return a.url.localeCompare(b.url); });
     }
     const items = listToTree(sme.entries);
     if (sort == "name") {
-        sortTree(items);
+        sortTreeName(items);
+    } else if (sort == "dirfirst") {
+        sortTreeDirFirst(items);
     }
     return (
-        <Container maxWidth="lg" disableGutters={true} sx={{ minHeight: '100vh' }}>
-            <NavBar debug={debug} title={title} exitUrl="/" />
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                }}
-            >
-                {sme.success ? <SitemapTreeView items={items} /> : <h1>Failed to load sitemap</h1>}
-            </Box>
+        <>
+        <Container maxWidth={false} disableGutters={true} sx={{ minHeight: '100vh' }}>
+            <NavBar debug={debug} messages={sme.messages} title={title} exitUrl="/" />
+            <Container maxWidth="lg" disableGutters={true} sx={{ minHeight: '100vh' }}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}
+                >
+                    {sme.success ? <SitemapTreeView items={items} /> : <h1>Failed to load sitemap</h1>}
+                </Box>
+            </Container>
         </Container>
+        <PoweredBy />
+        </>
+
     );
 }
 
-function sortTree(items: TreeItem[]) {
+function sortTreeName(items: TreeItem[]) {
     if (items.length == 0) {
         return;
     }
@@ -56,9 +66,30 @@ function sortTree(items: TreeItem[]) {
     }
 
     for (const item of items) {
-        sortTree(item.children);
+        sortTreeName(item.children);
     }
 }
+
+function sortTreeDirFirst(items: TreeItem[]) {
+    if (items.length == 0) {
+        return;
+    }
+    if (items.length > 1) {
+        items.sort((a, b) => {
+            if (a.children.length > 0 && b.children.length == 0) {
+                return -1;
+            } else if (a.children.length == 0 && b.children.length > 0) {
+                return 1;
+            }
+            return a.label.localeCompare(b.label)
+        });
+    }
+
+    for (const item of items) {
+        sortTreeDirFirst(item.children);
+    }
+}
+
 
 function listToTree(entries: SitemapEntry[]): TreeItem[] {
 
