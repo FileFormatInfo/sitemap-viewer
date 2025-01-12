@@ -13,10 +13,11 @@ type NavBarProps = {
     debug: boolean,
     exitUrl: string,
     messages: string[],
+    mode: boolean,
     title: string,
 }
 
-export default function NavBar({ debug, exitUrl, messages, title }: NavBarProps) {
+export default function NavBar({ debug, exitUrl, messages, mode, title }: NavBarProps) {
     return (
         <AppBar position="static" id="back-to-top-anchor" >
             <Container maxWidth="lg" disableGutters={true}>
@@ -28,7 +29,7 @@ export default function NavBar({ debug, exitUrl, messages, title }: NavBarProps)
                         </Typography>
                     </Stack>
                     <Stack direction="row" spacing={2}>
-                        <ModeButton />
+                        {mode ? <ModeButton /> : null}
                         {debug ? <DebugButton messages={messages} /> : null}
                         <Link href={exitUrl}>
                             <MdLogout size={32} color="white" />

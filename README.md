@@ -34,16 +34,20 @@ This is a graphical sitemap viewer for [Sitemap.Style](https://www.sitemap.style
 
 ## To Do
 
-- [ ] 404 page formatting
-- [ ] loading spinner
-- [ ] custom xml namespace: open/closed, allopen, style (and title, etc?)
 - [ ] exit url to default to root of sitemap.xml URL
-- [ ] `title` to allow markdown
-- [ ] `title` to have variables for `host`, `barehost`
-- [ ] name: punctuation to space
-- [ ] name option: title case
-- [ ] flag for show debug icon in navbar: shows `messages[]`
+- [ ] use exit URL on navbar icon and title
+- [ ] "report an issue" in footer of debug dialog (link to GH issues)
+- [ ] allow indexing of /
+- [ ] search engine metadata on /
+- [ ] custom xml namespace: open/closed, allopen, style (and title, etc?)
+- [ ] label transforms: do not change if custom label
 - [ ] move ModeSwitch someplace unobtrusive
 - [ ] sort option `homefirst` to be name, but "Home" at top
 - [ ] demo button that loads local test sitemap.xml
 - [ ] translations (and language picker)
+- [ ] handle plain-text sitemaps
+- [ ] test error pages
+- [ ] use favicon (or custom icon) in navbar (instead of MdMap)
+- [ ] better 404 page formatting
+- [ ] `title` to allow markdown
+- [ ] `title` to have variables for `host`, `barehost`

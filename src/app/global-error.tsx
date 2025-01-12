@@ -1,4 +1,7 @@
-'use client' // Error boundaries must be Client Components
+'use client'
+import { useEffect } from "react";
+
+ // Error boundaries must be Client Components
 
 export default function GlobalError({
     error,
@@ -7,6 +10,18 @@ export default function GlobalError({
     error: Error & { digest?: string }
     reset: () => void
 }) {
+    useEffect(() => {
+        // Log the error to an error reporting service
+        console.error(error);
+        fetch('/api/errorlog.json', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ error: error.message, digest: error.digest }),
+        });
+    }, [error])
+
     console.log('ERROR: global uncaught error', error);
     return (
         // global-error must include html and body tags

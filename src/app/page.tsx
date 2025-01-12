@@ -13,6 +13,8 @@ import Checkbox from '@mui/material/Checkbox';
 
 import { constants } from '@/lib/constants';
 import SortSelect from '@/components/SortSelect';
+import TransformSelect from '@/components/TransformSelect';
+import FormGroup from '@mui/material/FormGroup';
 
 export default function Home() {
     return (
@@ -47,23 +49,13 @@ export default function Home() {
                         defaultValue="/"
                     />
                     <SortSelect />
-                    <TextField
-                        fullWidth
-                        id="title"
-                        label="Title bar text (optional)"
-                        name="title"
-                        sx={{ mt: 2 }}
-                        defaultValue={constants.DEFAULT_TITLE}
-                    />
-                    <TextField
-                        fullWidth
-                        id="home"
-                        label="Home text (optional)"
-                        name="home"
-                        sx={{ mt: 2 }}
-                        defaultValue={constants.DEFAULT_HOME}
-                    />
-                    <FormControlLabel control={<Checkbox name="debug" value="1" />} label="Debugging" />
+                    <TransformSelect />
+                    <FormGroup sx={{mt: 2}}>
+                        <FormControlLabel control={<Checkbox name="showmode" value="1" defaultChecked />} label="Show Light/Dark Button" />
+                    </FormGroup>
+                    <FormGroup sx={{ mt: 1 }}>
+                        <FormControlLabel control={<Checkbox name="showdebug" value="1" />} label="Show Debug Button" />
+                    </FormGroup>
                     <Stack direction="row" spacing={2} justifyContent="flex-start" sx={{ mt: 2 }}>
                         <Button color="success" variant="contained" type="submit">
                             View

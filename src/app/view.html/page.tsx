@@ -9,6 +9,7 @@ import { getFirst } from '@/lib/getFirst';
 import { loadSitemap } from '@/lib/loadSitemap';
 import { SitemapEntry, TreeItem } from '@/lib/types';
 import PoweredBy from '@/components/PoweredBy';
+import { getTransform } from '@/components/TransformSelect';
 
 export default async function View({
     searchParams,
@@ -17,7 +18,8 @@ export default async function View({
 }) {
 
     const urlParams = (await searchParams);
-    const debug = getFirst(urlParams['debug'], '0') === '1';
+    const showDebug = getFirst(urlParams['showdebug'], '0') === '1';
+    const showMode = getFirst(urlParams['showmode'], '0') === '1';
     const title = getFirst(urlParams['title'], 'Site Map');
     const home = getFirst(urlParams['home'], 'Home');
     let url_str = getFirst(urlParams['url'], constants.RANDOM_VALID_URL);
@@ -31,6 +33,10 @@ export default async function View({
         sme.entries.sort((a, b) => { return a.url.localeCompare(b.url); });
     }
     const items = listToTree(sme.entries);
+    const transformer = getTransform(getFirst(urlParams['transform'], 'original'));
+    if (transformer) {
+        transform(items, transformer);
+    }
     if (sort == "name") {
         sortTreeName(items);
     } else if (sort == "dirfirst") {
@@ -39,7 +45,7 @@ export default async function View({
     return (
         <>
         <Container maxWidth={false} disableGutters={true} sx={{ minHeight: '100vh' }}>
-            <NavBar debug={debug} messages={sme.messages} title={title} exitUrl="/" />
+                <NavBar debug={showDebug} messages={sme.messages} mode={showMode} title={title} exitUrl="/" />
             <Container maxWidth="lg" disableGutters={true} sx={{ minHeight: '100vh' }}>
                 <Box
                     sx={{
@@ -55,6 +61,15 @@ export default async function View({
         </>
 
     );
+}
+
+function transform(items: TreeItem[], transformer: (s: string) => string) {
+    for (const item of items) {
+        item.label = transformer(item.label);
+        if (item.children.length > 0) {
+            transform(item.children, transformer);
+        }
+    }
 }
 
 function sortTreeName(items: TreeItem[]) {

@@ -10,7 +10,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import { useColorScheme } from '@mui/material/styles';
 import { blue } from '@mui/material/colors';
-import { MdDarkMode, MdOutlinePhonelink, MdSunny } from "react-icons/md";
+import { MdDarkMode, MdBrightness6, MdLightMode } from "react-icons/md";
 import { IconType } from 'react-icons';
 
 type Mode = 'light' | 'dark' | 'system';    //LATER: import from ???
@@ -22,9 +22,11 @@ type ModeItem = {
     label: string;
 }
 
+// alternatives to system: MdSettingsBrightness, MdBrightness6, MdOutlinePhoneLink
+
 const modes: ModeItem[] = [
-    { value: "system", icon: MdOutlinePhonelink, label: "System" },
-    { value: "light", icon: MdSunny, label: "Light" },
+    { value: "system", icon: MdBrightness6, label: "System" },
+    { value: "light", icon: MdLightMode, label: "Light" },
     { value: "dark", icon: MdDarkMode, label: "Dark" },
 ];
 
@@ -38,7 +40,7 @@ function ModeDialog(props: ModeDialogProps) {
     const { open, current, onClose } = props;
 
     return (
-        <Dialog open={open}>
+        <Dialog open={open} onClose={() => onClose(null)}>
             <DialogTitle onClick={() => onClose(null)}>
                 Select Color Scheme
             </DialogTitle>

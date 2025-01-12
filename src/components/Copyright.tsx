@@ -13,7 +13,7 @@ export default function Copyright() {
         >
             Copyright © 2025 Andrew Marcuse. All Rights Reserved.
             {' | '}
-            <NextLink color="inherit" href="https://andrew.marcuse.info/">
+            <NextLink color="inherit" href="https://andrew.marcuse.info/contact.html">
                 Contact
             </NextLink>
             {' | '}

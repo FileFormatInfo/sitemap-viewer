@@ -32,7 +32,7 @@ export default function Error({
                 width: '100vw',
             }}
         >
-            <h2>Something went wrong! (error-root)</h2>
+            <h2>Something went wrong! (error-view)</h2>
             <button
                 onClick={
                     // Attempt to recover by trying to re-render the segment
