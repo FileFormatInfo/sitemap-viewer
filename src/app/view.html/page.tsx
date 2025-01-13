@@ -9,7 +9,7 @@ import { getFirst } from '@/lib/getFirst';
 import { loadSitemap } from '@/lib/loadSitemap';
 import { SitemapEntry, TreeItem } from '@/lib/types';
 import PoweredBy from '@/components/PoweredBy';
-import { getTransform } from '@/components/TransformSelect';
+import { DEFAULT_TRANSFORM, getTransform } from '@/components/TransformSelect';
 
 export default async function View({
     searchParams,
@@ -27,13 +27,19 @@ export default async function View({
         url_str = constants.RANDOM_VALID_URL;
     }
     const sort = getFirst(urlParams['sort'], 'original');
+    let exitUrl = getFirst(urlParams['exiturl'], '');
+    if (exitUrl == '') {
+        const defaultUrl = new URL(url_str);
+        defaultUrl.pathname = '/';
+        exitUrl = defaultUrl.toString();
+    }
 
     const sme = await loadSitemap(url_str, { home });
     if (sort == "url") {
         sme.entries.sort((a, b) => { return a.url.localeCompare(b.url); });
     }
     const items = listToTree(sme.entries);
-    const transformer = getTransform(getFirst(urlParams['transform'], 'original'));
+    const transformer = getTransform(getFirst(urlParams['transform'], DEFAULT_TRANSFORM));
     if (transformer) {
         transform(items, transformer);
     }
@@ -45,7 +51,7 @@ export default async function View({
     return (
         <>
         <Container maxWidth={false} disableGutters={true} sx={{ minHeight: '100vh' }}>
-                <NavBar debug={showDebug} messages={sme.messages} mode={showMode} title={title} exitUrl="/" />
+                <NavBar debug={showDebug} messages={sme.messages} mode={showMode} title={title} exitUrl={exitUrl} />
             <Container
                 maxWidth="lg"
                 disableGutters={true}

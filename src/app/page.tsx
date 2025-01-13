@@ -42,11 +42,12 @@ export default function Home() {
                     />
                     <TextField
                         fullWidth
+                        helperText="Defaults to root of sitemap.xml URL"
                         id="exit"
-                        label="Exit destination URL (optional)"
+                        label="Return URL (optional)"
                         name="exit"
                         sx={{ mt: 2 }}
-                        defaultValue="/"
+                        defaultValue=""
                     />
                     <SortSelect />
                     <TransformSelect />

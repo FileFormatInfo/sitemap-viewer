@@ -28,6 +28,8 @@ const transformOptions:TransformOption[] = [
     { value: 'titlecase', label: 'Title cased, punctuation to spaces', transform: titleCase },
 ];
 
+const DEFAULT_TRANSFORM = transformOptions[2].value;
+
 const transformMap = new Map<string, (s: string) => string>(transformOptions.map((option) => [option.value, option.transform || ((s: string) => s)]));
 
 function getTransform(value: string): ((s: string) => string) | null {
@@ -42,7 +44,7 @@ export default function TransformSelect() {
             </InputLabel>
             <Select
                 native
-                defaultValue={ transformOptions[2].value }
+                defaultValue={ DEFAULT_TRANSFORM}
                 inputProps={{
                     name: 'transform',
                     id: 'transform',
@@ -61,4 +63,5 @@ export default function TransformSelect() {
 
 export {
     getTransform,
+    DEFAULT_TRANSFORM,
 }
