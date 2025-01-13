@@ -6,14 +6,12 @@ export default function PoweredBy() {
     return (
         <Container disableGutters={true} sx={{
             backgroundColor: '#eee',
-            xborder: '1px solid #999',
+            border: '1px solid #ddd',
             borderRadius: 2,
             paddingX: 1,
             paddingY: 0.5,
             opacity: 0.45,
             position: 'fixed',
-            left: '50%',
-            transform: 'translateX(-50 %)',
             bottom: 0,
             mb: 2,
             width: 'fit-content',

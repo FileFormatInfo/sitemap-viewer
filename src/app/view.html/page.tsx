@@ -46,18 +46,23 @@ export default async function View({
         <>
         <Container maxWidth={false} disableGutters={true} sx={{ minHeight: '100vh' }}>
                 <NavBar debug={showDebug} messages={sme.messages} mode={showMode} title={title} exitUrl="/" />
-            <Container maxWidth="lg" disableGutters={true} sx={{ minHeight: '100vh' }}>
+            <Container
+                maxWidth="lg"
+                disableGutters={true}
+                    sx={{ alignItems: "center", display: "flex", flexDirection: "column", justifyContent: "top",minHeight: '100vh' }}
+                >
                 <Box
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
+                        width: '100%',
                     }}
                 >
                     {sme.success ? <SitemapTreeView items={items} /> : <h1>Failed to load sitemap</h1>}
                 </Box>
+                <PoweredBy />
             </Container>
         </Container>
-        <PoweredBy />
         </>
 
     );
