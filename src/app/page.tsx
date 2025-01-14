@@ -74,7 +74,7 @@ export default function Home() {
                             Cancel
                         </Button>
                         <Stack direction="row" flex="1" justifyContent="flex-end" spacing={2} sx={{backgroundColor: 'transparent'}}>
-                            <Button component={NextLink} variant="contained" href="/view.html?url=https://www.regex.zone/sitemap.xml&title=Regex+Zone+Site+Map&sort=name">
+                            <Button component={NextLink} variant="contained" href="/view.html?url=https://www.regex.zone/sitemap.xml&title=Regex+Zone+Site+Map&sort=name&return=/&showexit=1">
                                 Demo
                             </Button>
                         </Stack>
