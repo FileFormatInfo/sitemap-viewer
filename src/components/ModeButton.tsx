@@ -10,7 +10,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import { useColorScheme } from '@mui/material/styles';
 import { blue } from '@mui/material/colors';
-import { MdDarkMode, MdBrightness6, MdLightMode } from "react-icons/md";
+import { MdDarkMode, MdBrightness6, MdLightMode, MdOutlinePhonelink } from "react-icons/md";
 import { IconType } from 'react-icons';
 
 type Mode = 'light' | 'dark' | 'system';    //LATER: import from ???
@@ -25,7 +25,7 @@ type ModeItem = {
 // alternatives to system: MdSettingsBrightness, MdBrightness6, MdOutlinePhoneLink
 
 const modes: ModeItem[] = [
-    { value: "system", icon: MdBrightness6, label: "System" },
+    { value: "system", icon: MdOutlinePhonelink, label: "System" },
     { value: "light", icon: MdLightMode, label: "Light" },
     { value: "dark", icon: MdDarkMode, label: "Dark" },
 ];
@@ -62,7 +62,7 @@ function ModeDialog(props: ModeDialogProps) {
     );
 }
 
-export default function DebugButton() {
+export default function ModeButton() {
     const [open, setOpen] = React.useState(false);
     const { mode, setMode } = useColorScheme();
 
@@ -85,13 +85,9 @@ export default function DebugButton() {
         }
     };
 
-    const currentMode = modes.find((m) => m.value == mode);
-    const CurrentIcon:IconType = currentMode ? currentMode.icon : modes[0].icon;
-
-
     return (
         <>
-            <CurrentIcon onClick={() => setOpen(true)} size={32} />
+            <MdBrightness6 onClick={() => setOpen(true)} size={32} />
             <ModeDialog open={open} current={mode} onClose={handleClose} />
         </>
     );
