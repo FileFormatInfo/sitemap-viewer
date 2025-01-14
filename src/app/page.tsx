@@ -1,20 +1,26 @@
 import * as React from 'react';
+import { Metadata } from 'next/types';
+import NextLink from 'next/link';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import NextLink from 'next/link';
-import ProTip from '@/components/ProTip';
-import Copyright from '@/components/Copyright';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import FormGroup from '@mui/material/FormGroup';
 
 import { constants } from '@/lib/constants';
 import SortSelect from '@/components/SortSelect';
 import TransformSelect from '@/components/TransformSelect';
-import FormGroup from '@mui/material/FormGroup';
+import ProTip from '@/components/ProTip';
+import Copyright from '@/components/Copyright';
+
+
+export const metadata: Metadata = {
+    description: 'Mobile-friendly web application to view sitemap.xml files',
+}
 
 export default function Home() {
     return (

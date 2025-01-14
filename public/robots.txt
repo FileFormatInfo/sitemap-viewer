@@ -1,8 +1,7 @@
 #
 # robots.txt for the sitemap.xml viewer
 #
-# This is a web application: there nothing here to index
-# Go to https://www.sitemap.style/ for content
-#
+
 User-agent: *
-Disallow: /
+Disallow: /view.html
+Disallow: /honeypot.txt
