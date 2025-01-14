@@ -43,7 +43,7 @@ export default function Home() {
                     <TextField
                         fullWidth
                         helperText="Defaults to root of sitemap.xml URL"
-                        id="exit"
+                        id="return"
                         label="Return URL (optional)"
                         name="exit"
                         sx={{ mt: 2 }}
@@ -52,10 +52,13 @@ export default function Home() {
                     <SortSelect />
                     <TransformSelect />
                     <FormGroup sx={{mt: 2}}>
-                        <FormControlLabel control={<Checkbox name="showmode" value="1" defaultChecked />} label="Show Light/Dark Button" />
+                        <FormControlLabel control={<Checkbox name="showmode" value="1" defaultChecked />} label="Show Light/Dark Tool" />
                     </FormGroup>
                     <FormGroup sx={{ mt: 1 }}>
-                        <FormControlLabel control={<Checkbox name="showdebug" value="1" />} label="Show Debug Button" />
+                        <FormControlLabel control={<Checkbox name="showdebug" value="1" />} label="Show Logging Tool" />
+                    </FormGroup>
+                    <FormGroup sx={{ mt: 1 }}>
+                        <FormControlLabel control={<Checkbox name="showexit" value="1" defaultChecked />} label="Show Exit Tool" />
                     </FormGroup>
                     <Stack direction="row" spacing={2} justifyContent="flex-start" sx={{ mt: 2 }}>
                         <Button color="success" variant="contained" type="submit">

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
-import { MdBugReport } from 'react-icons/md';
+import { MdSettings } from 'react-icons/md';
 import DialogContent from '@mui/material/DialogContent';
 
 export interface DebugDialogProps {
@@ -43,7 +43,7 @@ export default function DebugButton({ messages }: DebugButtonProps) {
 */
     return (
         <>
-            <MdBugReport onClick={() => setOpen(true)} size={32} />
+            <MdSettings onClick={() => setOpen(true)} size={32} />
             <DebugDialog messages={messages} open={open} onClose={() => setOpen(false)} />
         </>
     );

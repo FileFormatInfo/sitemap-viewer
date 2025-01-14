@@ -20,6 +20,7 @@ export default async function View({
     const urlParams = (await searchParams);
     const showDebug = getFirst(urlParams['showdebug'], '0') === '1';
     const showMode = getFirst(urlParams['showmode'], '0') === '1';
+    const showExit = getFirst(urlParams['showexit'], '0') === '1';
     const title = getFirst(urlParams['title'], 'Site Map');
     const home = getFirst(urlParams['home'], 'Home');
     let url_str = getFirst(urlParams['url'], constants.RANDOM_VALID_URL);
@@ -27,11 +28,11 @@ export default async function View({
         url_str = constants.RANDOM_VALID_URL;
     }
     const sort = getFirst(urlParams['sort'], 'original');
-    let exitUrl = getFirst(urlParams['exiturl'], '');
-    if (exitUrl == '') {
+    let returnUrl = getFirst(urlParams['return'], '');
+    if (returnUrl == '') {
         const defaultUrl = new URL(url_str);
         defaultUrl.pathname = '/';
-        exitUrl = defaultUrl.toString();
+        returnUrl = defaultUrl.toString();
     }
 
     const sme = await loadSitemap(url_str, { home });
@@ -51,7 +52,7 @@ export default async function View({
     return (
         <>
         <Container maxWidth={false} disableGutters={true} sx={{ minHeight: '100vh' }}>
-                <NavBar debug={showDebug} messages={sme.messages} mode={showMode} title={title} exitUrl={exitUrl} />
+                <NavBar debug={showDebug} exit={showExit} messages={sme.messages} mode={showMode} title={title} returnUrl={returnUrl} />
             <Container
                 maxWidth="lg"
                 disableGutters={true}
