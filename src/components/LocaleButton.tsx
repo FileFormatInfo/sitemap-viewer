@@ -48,7 +48,7 @@ export default function LocaleButton() {
                 onClick={handleClick}
                 style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
             >
-                <MdTranslate color="white" size={32} />
+                <MdTranslate color="primary" size={32} />
             </div>
             <Menu
                 id="locale-menu"
