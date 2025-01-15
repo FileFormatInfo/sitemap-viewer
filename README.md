@@ -33,21 +33,18 @@ This is a graphical viewer for `sitemap.xml` files.  Try it at [Sitemap.Style](h
 
 * [MUI](https://mui.com/material-ui/) - React components
 * [Twemoji](https://github.com/twitter/twemoji) - favicon
+* [next-intl](https://next-intl.dev/)
 
 ## To Do
 
-- [ ] "report an issue" in footer of debug dialog (link to GH issues)
-- [ ] allow indexing of /
-- [ ] search engine metadata on /
-- [ ] custom xml namespace: open/closed, allopen, style (and title, etc?)
-- [ ] label transforms: do not change if custom label
-- [ ] move ModeSwitch someplace unobtrusive
+- [ ] custom xml namespace: open/closed, allopen, style, title
+- [ ] label transforms: do not change if custom label (or translation text)
 - [ ] sort option `homefirst` to be name, but "Home" at top
 - [ ] demo button that loads local test sitemap.xml
-- [ ] translations (and language picker)
 - [ ] handle plain-text sitemaps
-- [ ] test error pages
+- [ ] "report an issue" in footer of debug dialog (link to GH issues)
+- [ ] test/cleanup error pages
 - [ ] use favicon (or custom icon) in navbar (instead of MdMap)
 - [ ] better 404 page formatting
-- [ ] `title` to allow markdown
-- [ ] `title` to have variables for `host`, `barehost`
+- [ ] customize initial light/dark mode (or maybe not?)
+- [ ] customize initial language (or maybe not?)

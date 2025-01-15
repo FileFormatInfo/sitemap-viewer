@@ -1,0 +1,43 @@
+{
+  "Footer": {
+    "contact_link": "Kontakt",
+    "source_link": "Quelle"
+  },
+  "HomePage": {
+    "cancel_button": "Abbrechen",
+    "demo_button": "Demo",
+    "return_help": "Standardmäßig an der Wurzel der URL sitemap.xml",
+    "return_label": "Rückkehr-URL (optional)",
+    "show_exit_label": "Ausgangswerkzeug anzeigen",
+    "show_language_label": "Sprachauswahl anzeigen",
+    "show_log_label": "Protokollierungswerkzeug anzeigen",
+    "show_mode_label": "Hell/Dunkel-Werkzeug anzeigen",
+    "sort_label": "Sortieren",
+    "title": "Sitemap-Viewer",
+    "transform_label": "Seitennamen-Transformation",
+    "url_label": "URL Ihrer sitemap.xml",
+    "view_button": "Ansehen"
+  },
+  "LocaleSwitcher": {
+    "de": "Deutsch",
+    "en": "English",
+    "es": "Spanisch (Español)",
+    "fr": "Französisch (Français)"
+  },
+  "Sort": {
+    "dirfirst": "Name, aber Verzeichnisse zuerst",
+    "name": "Name",
+    "original": "Original",
+    "url": "URL"
+  },
+  "Transform": {
+    "initialcap": "Erster Buchstabe groß, Interpunktion zu Leerzeichen",
+    "original": "Keine Änderung",
+    "titlecase": "Titel-Schreibweise, Interpunktion zu Leerzeichen"
+  },
+  "ViewPage": {
+    "home": "Startseite",
+    "poweredby": "Angetrieben durch Sitemap.Style",
+    "title": "Sitemap"
+  }
+}

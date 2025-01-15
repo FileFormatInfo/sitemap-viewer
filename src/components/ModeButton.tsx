@@ -1,20 +1,14 @@
-'use client'
+'use client';
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Dialog from '@mui/material/Dialog';
-import { useColorScheme } from '@mui/material/styles';
-import { blue } from '@mui/material/colors';
 import { MdDarkMode, MdBrightness6, MdLightMode, MdOutlinePhonelink } from "react-icons/md";
 import { IconType } from 'react-icons';
+import ListItemText from '@mui/material/ListItemText';
+import { useColorScheme } from '@mui/material/styles';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
 
 type Mode = 'light' | 'dark' | 'system';    //LATER: import from ???
-
 
 type ModeItem = {
     value: Mode;
@@ -22,48 +16,19 @@ type ModeItem = {
     label: string;
 }
 
-// alternatives to system: MdSettingsBrightness, MdBrightness6, MdOutlinePhoneLink
-
 const modes: ModeItem[] = [
     { value: "system", icon: MdOutlinePhonelink, label: "System" },
     { value: "light", icon: MdLightMode, label: "Light" },
     { value: "dark", icon: MdDarkMode, label: "Dark" },
 ];
 
-export interface ModeDialogProps {
-    open: boolean;
-    current: string;
-    onClose: (value: Mode | null) => void;
-}
-
-function ModeDialog(props: ModeDialogProps) {
-    const { open, current, onClose } = props;
-
-    return (
-        <Dialog open={open} onClose={() => onClose(null)}>
-            <DialogTitle onClick={() => onClose(null)}>
-                Select Color Scheme
-            </DialogTitle>
-            <List sx={{ pt: 0 }}>
-                {modes.map((mode) => (
-                    <ListItem disablePadding key={mode.value}>
-                        <ListItemButton onClick={() => onClose(mode.value)}>
-                            <ListItemAvatar>
-                                <Avatar sx={{ bgcolor: blue[50], color: blue[800]}}>
-                                    <mode.icon />
-                                </Avatar>
-                            </ListItemAvatar>
-                            <ListItemText primary={`${mode.label} ${current == mode.value ? "(current)" : ""}`} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-        </Dialog>
-    );
-}
-
 export default function ModeButton() {
-    const [open, setOpen] = React.useState(false);
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+
     const { mode, setMode } = useColorScheme();
 
     React.useEffect(() => {
@@ -77,18 +42,49 @@ export default function ModeButton() {
         return null;
     }
 
-    const handleClose = (value: Mode | null) => {
-        setOpen(false);
+    const handleClose = (value: string | null = null) => {
+        setAnchorEl(null);
         if (value != null) {
-            setMode(value);
+            setMode(value as Mode);
             localStorage.setItem('colorScheme', value);
         }
     };
 
     return (
         <>
-            <MdBrightness6 onClick={() => setOpen(true)} size={32} />
-            <ModeDialog open={open} current={mode} onClose={handleClose} />
+            <div
+                id="mode-button"
+                aria-controls={open ? 'mode-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+                style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+            >
+                <MdBrightness6 color="white" size={32} />
+            </div>
+            <Menu
+                id="mode-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={() => handleClose(null)}
+                MenuListProps={{
+                    'aria-labelledby': 'mode-button',
+                }}
+            >{modes.map((option) => (
+                <MenuItem key={option.value} onClick={() => handleClose(option.value)}>
+                    <ListItemIcon>
+                        <option.icon />
+                    </ListItemIcon>
+                    <ListItemText>
+                        {option.label} {option.value == mode ? "(current)" : ""}
+                    </ListItemText>
+                </MenuItem>
+            ))
+                }
+            </Menu>
         </>
     );
 }
+
+/*
+ */

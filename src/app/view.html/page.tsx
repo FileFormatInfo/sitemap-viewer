@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { getTranslations } from 'next-intl/server';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 
@@ -8,7 +9,7 @@ import { constants } from '@/lib/constants';
 import { getFirst } from '@/lib/getFirst';
 import { loadSitemap } from '@/lib/loadSitemap';
 import { SitemapEntry, TreeItem } from '@/lib/types';
-import PoweredBy from '@/components/PoweredBy';
+import { PoweredBy } from '@/components/PoweredBy';
 import { DEFAULT_TRANSFORM, getTransform } from '@/components/TransformSelect';
 
 export default async function View({
@@ -16,16 +17,18 @@ export default async function View({
 }: {
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
+    const t = await getTranslations('ViewPage');
 
     const urlParams = (await searchParams);
     const showDebug = getFirst(urlParams['showdebug'], '0') === '1';
     const showMode = getFirst(urlParams['showmode'], '0') === '1';
     const showExit = getFirst(urlParams['showexit'], '0') === '1';
-    const title = getFirst(urlParams['title'], 'Site Map');
-    const home = getFirst(urlParams['home'], 'Home');
-    let url_str = getFirst(urlParams['url'], constants.RANDOM_VALID_URL);
+    const showLanguage = getFirst(urlParams['showlanguage'], '0') === '1';
+    const title = getFirst(urlParams['title'], t('title'));
+    const home = getFirst(urlParams['home'], t('home'));
+    let url_str = getFirst(urlParams['url'], constants.DEMO_URL);
     if (!url_str || url_str === constants.DEFAULT_SITEMAP_URL) {
-        url_str = constants.RANDOM_VALID_URL;
+        url_str = constants.DEMO_URL;
     }
     const sort = getFirst(urlParams['sort'], 'original');
     let returnUrl = getFirst(urlParams['return'], '');
@@ -52,9 +55,9 @@ export default async function View({
     return (
         <>
         <Container maxWidth={false} disableGutters={true} sx={{ minHeight: '100vh' }}>
-                <NavBar debug={showDebug} exit={showExit} messages={sme.messages} mode={showMode} title={title} returnUrl={returnUrl} />
+                <NavBar debug={showDebug} exit={showExit} language={showLanguage} messages={sme.messages} mode={showMode} title={title} returnUrl={returnUrl} />
             <Container
-                maxWidth="lg"
+                maxWidth="md"
                 disableGutters={true}
                     sx={{ alignItems: "center", display: "flex", flexDirection: "column", justifyContent: "top",minHeight: '100vh' }}
                 >

@@ -99,7 +99,7 @@ async function processUrl(
         retVal.messages.push(errorMessage(err));
         return new_maps;
     }
-    console.log(`xml as json : ${JSON.stringify(xml_data)}`);
+    //console.log(`xml as json : ${JSON.stringify(xml_data)}`);
 
     if (xml_data.urlset) {
         processSitemap(retVal, url_str, xml_data);

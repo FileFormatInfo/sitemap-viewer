@@ -1,0 +1,43 @@
+{
+  "Footer": {
+    "contact_link": "Contacto",
+    "source_link": "Fuente"
+  },
+  "HomePage": {
+    "cancel_button": "Cancelar",
+    "demo_button": "Demostración",
+    "return_help": "Por defecto a la raíz de la URL de sitemap.xml",
+    "return_label": "URL de retorno (opcional)",
+    "show_exit_label": "Mostrar herramienta de salida",
+    "show_language_label": "Mostrar selector de idioma",
+    "show_log_label": "Mostrar herramienta de registro",
+    "show_mode_label": "Mostrar herramienta de luz/oscuro",
+    "sort_label": "Ordenar",
+    "title": "Visor de mapa del sitio",
+    "transform_label": "Transformación del nombre de la página",
+    "url_label": "URL de tu sitemap.xml",
+    "view_button": "Ver"
+  },
+  "LocaleSwitcher": {
+    "de": "Alemán (Deutsch)",
+    "en": "Inglés (English)",
+    "fr": "Francesa (Français)",
+    "es": "Español"
+  },
+  "Sort": {
+    "dirfirst": "Nombre, pero directorios primero",
+    "name": "Nombre",
+    "original": "Original",
+    "url": "URL"
+  },
+  "Transform": {
+    "initialcap": "Primera letra en mayúscula, puntuación a espacios",
+    "original": "Sin cambio",
+    "titlecase": "Título en mayúsculas, puntuación a espacios"
+  },
+  "ViewPage": {
+    "home": "Página de inicio",
+    "poweredby": "Desarrollado por Sitemap.Style",
+    "title": "Mapa del sitio"
+  }
+}

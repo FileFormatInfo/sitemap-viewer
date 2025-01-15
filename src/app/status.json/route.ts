@@ -1,4 +1,4 @@
-export async function GET(request: Request) {
+export function GET(request: Request) {
     const jsonStr = JSON.stringify({
         success: true,
         message: "OK",

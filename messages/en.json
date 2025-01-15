@@ -1,0 +1,43 @@
+{
+  "Footer": {
+    "contact_link": "Contact",
+    "source_link": "Source"
+  },
+  "HomePage": {
+    "cancel_button": "Cancel",
+    "demo_button": "Demo",
+    "return_help": "Defaults to root of sitemap.xml URL",
+    "return_label": "Return URL (optional)",
+    "show_exit_label": "Show Exit Tool",
+    "show_language_label": "Show Language Picker",
+    "show_log_label": "Show Logging Tool",
+    "show_mode_label": "Show Light/Dark Tool",
+    "sort_label": "Sort",
+    "title": "Sitemap Viewer",
+    "transform_label": "Page name transform",
+    "url_label": "URL of your sitemap.xml",
+    "view_button": "View"
+  },
+  "LocaleSwitcher": {
+    "de": "German (Deutsch)",
+    "en": "English",
+    "es": "Spanish (Español)",
+    "fr": "French (Français)"
+  },
+  "Sort": {
+    "dirfirst": "Name, but directories first",
+    "name": "Name",
+    "original": "Original",
+    "url": "URL"
+  },
+  "Transform": {
+    "initialcap": "First letter capitalized, punctation to spaces",
+    "original": "No change",
+    "titlecase": "Title cased, punctuation to spaces"
+  },
+  "ViewPage": {
+    "home": "Home page",
+    "poweredby": "Powered by Sitemap.Style",
+    "title": "Site Map"
+  }
+}

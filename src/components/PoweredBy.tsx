@@ -2,8 +2,10 @@ import * as React from 'react';
 import NextLink from 'next/link';
 import Container from '@mui/material/Container';
 import { grey } from '@mui/material/colors';
+import { useTranslations } from 'next-intl';
 
-export default function PoweredBy() {
+function PoweredBy() {
+    const t = useTranslations('ViewPage');
     return (
         <Container disableGutters={true} sx={{
             backgroundColor: grey[200],
@@ -21,8 +23,11 @@ export default function PoweredBy() {
             width: 'fit-content',
             fontSize: '0.8rem',
         }}>
-            {'Powered by '}
-            <NextLink href="https://view.sitemap.style/" color={grey[900]} >Sitemap.Style</NextLink>
+            <NextLink href="https://view.sitemap.style/"
+                style={{ textDecoration: 'none', color: grey[900] }}
+            >{t("poweredby")}</NextLink>
         </Container>
     );
 }
+
+export { PoweredBy };

@@ -15,7 +15,7 @@ function DebugDialog(props: DebugDialogProps) {
     const { messages, open, onClose } = props;
 
     return (
-        <Dialog maxWidth="lg" open={open} onClose={onClose} scroll="paper">
+        <Dialog maxWidth="md" open={open} onClose={onClose} scroll="paper">
             <DialogTitle onClick={onClose}>
                 Log Messages ({messages.length} lines)
             </DialogTitle>

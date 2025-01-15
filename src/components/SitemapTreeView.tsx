@@ -50,7 +50,7 @@ const CustomTreeItem = React.forwardRef(function CustomTreeItem(
   const childrenNumber = publicAPI.getItemOrderedChildrenIds(props.itemId).length;
   const item = publicAPI.getItem(props.itemId);
   const url = item.hasEntry ? item.id : '';
-  console.log(`item: ${JSON.stringify(item)}`);
+  //console.log(`item: ${JSON.stringify(item)}`);
 
   return (
     <TreeItem2
