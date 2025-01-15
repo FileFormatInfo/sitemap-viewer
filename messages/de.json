@@ -26,12 +26,14 @@
   },
   "Sort": {
     "dirfirst": "Name, aber Verzeichnisse zuerst",
+    "label": "Sortieren",
     "name": "Name",
     "original": "Original",
     "url": "URL"
   },
   "Transform": {
     "initialcap": "Erster Buchstabe groß, Interpunktion zu Leerzeichen",
+    "label": "Seitennamen-Transformation",
     "original": "Keine Änderung",
     "titlecase": "Titel-Schreibweise, Interpunktion zu Leerzeichen"
   },

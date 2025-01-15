@@ -21,7 +21,7 @@ export default function SortSelect() {
     return (
         <FormControl fullWidth sx={{ mt: 2 }}>
             <InputLabel shrink htmlFor="sort">
-                Sort
+                {t('label')}
             </InputLabel>
             <Select
                 native
@@ -30,7 +30,7 @@ export default function SortSelect() {
                     name: 'sort',
                     id: 'sort',
                 }}
-                label="Sort"
+                label={t('label')}
             >
                 {sortedOptions.map((option) => (
                     <option key={option} value={option}>

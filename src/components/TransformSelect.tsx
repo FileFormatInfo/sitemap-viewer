@@ -43,7 +43,7 @@ export default function TransformSelect() {
     return (
         <FormControl fullWidth sx={{ mt: 2 }}>
             <InputLabel shrink htmlFor="transform">
-                Page Name Transform
+                {t('label')}
             </InputLabel>
             <Select
                 native
@@ -52,7 +52,7 @@ export default function TransformSelect() {
                     name: 'transform',
                     id: 'transform',
                 }}
-                label="Page Name Transform"
+                label={t('label')}
             >
                 {sortedOptions.map((option) => (
                     <option key={option} value={option}>

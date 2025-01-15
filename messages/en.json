@@ -26,12 +26,14 @@
   },
   "Sort": {
     "dirfirst": "Name, but directories first",
+    "label": "Sort",
     "name": "Name",
     "original": "Original",
     "url": "URL"
   },
   "Transform": {
     "initialcap": "First letter capitalized, punctation to spaces",
+    "label": "Page name transformation",
     "original": "No change",
     "titlecase": "Title cased, punctuation to spaces"
   },

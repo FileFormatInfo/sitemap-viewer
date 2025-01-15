@@ -26,12 +26,14 @@
   },
   "Sort": {
     "dirfirst": "Nombre, pero directorios primero",
+    "label": "Ordenar",
     "name": "Nombre",
     "original": "Original",
     "url": "URL"
   },
   "Transform": {
     "initialcap": "Primera letra en mayúscula, puntuación a espacios",
+    "label": "Transformación del nombre de la página",
     "original": "Sin cambio",
     "titlecase": "Título en mayúsculas, puntuación a espacios"
   },

@@ -26,12 +26,14 @@
   },
   "Sort": {
     "dirfirst": "Nom, mais répertoires en premier",
+    "label": "Trier",
     "name": "Nom",
     "original": "Original",
     "url": "URL"
   },
   "Transform": {
     "initialcap": "Première lettre en majuscule, ponctuation en espaces",
+    "label": "Transformation du nom de la page",
     "original": "Aucun changement",
     "titlecase": "Majuscule à chaque mot, ponctuation en espaces"
   },
