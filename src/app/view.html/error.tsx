@@ -18,7 +18,11 @@ export default function Error({
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ error: error.message, digest: error.digest }),
+            body: JSON.stringify({
+                catcher: 'Error in /app/view.html',
+                message: error.message,
+                data: { err: error, digest: error.digest }
+            }),
         });
     }, [error])
 

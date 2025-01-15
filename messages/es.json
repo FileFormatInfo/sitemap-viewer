@@ -24,6 +24,12 @@
     "fr": "Francesa (Français)",
     "es": "Español"
   },
+  "ManagePage": {
+    "title": "Gestionar",
+    "errors_link": "Errores",
+    "exit_link": "Salir de la gestión",
+    "usage_link": "Uso"
+  },
   "Sort": {
     "dirfirst": "Nombre, pero directorios primero",
     "label": "Ordenar",

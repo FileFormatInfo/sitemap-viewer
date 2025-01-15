@@ -22,7 +22,11 @@ export async function POST(request: Request) {
         });
     }
 
-    addError(data.error);
+    addError({
+        catcher: data.catcher ? data.catcher : 'client POST',
+        message: data.message ? data.message : 'no message',
+        data
+    });
 
     return handleJsonp(request, {
         success: true,

@@ -37,10 +37,11 @@ This is a graphical viewer for `sitemap.xml` files.  Try it at [Sitemap.Style](h
 
 ## To Do
 
+- [ ] controlled inputs on form
 - [ ] custom xml namespace: open/closed, allopen, style, title
 - [ ] label transforms: do not change if custom label (or translation text)
 - [ ] sort option `homefirst` to be name, but "Home" at top
-- [ ] demo button that loads local test sitemap.xml
+- [ ] usage tracking: most recent sitemap URLs used w/count [lru-cache](https://www.npmjs.com/package/lru-cache)
 - [ ] handle plain-text sitemaps
 - [ ] "report an issue" in footer of debug dialog (link to GH issues)
 - [ ] test/cleanup error pages

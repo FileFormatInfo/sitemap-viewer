@@ -18,7 +18,11 @@ export default function GlobalError({
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ error: error.message, digest: error.digest }),
+            body: JSON.stringify({
+                catcher: 'global-error.tsx',
+                message: error.message,
+                data: { err: error, digest: error.digest }
+            }),
         });
     }, [error])
 

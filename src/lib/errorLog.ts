@@ -1,7 +1,17 @@
-const errorList:string[] = [];
 
-function addError(error:string) {
-    errorList.push(error);
+type ErrorLogEntry = {
+    date: Date,
+    catcher: string,
+    message: string,
+    err?: Error,
+    data?: any,
+}
+
+const errorList: ErrorLogEntry[] = [];
+
+function addError(ele: ErrorLogEntry) {
+    ele.date = new Date();
+    errorList.push(ele);
 }
 
 function getErrors() {
@@ -10,5 +20,6 @@ function getErrors() {
 
 export {
     addError,
+    type ErrorLogEntry,
     getErrors,
 }

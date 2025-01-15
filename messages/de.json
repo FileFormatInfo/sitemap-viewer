@@ -24,6 +24,12 @@
     "es": "Spanisch (Español)",
     "fr": "Französisch (Français)"
   },
+  "ManagePage": {
+    "title": "Verwalten",
+    "errors_link": "Fehler",
+    "exit_link": "Verwaltung beenden",
+    "usage_link": "Nutzung"
+  },
   "Sort": {
     "dirfirst": "Name, aber Verzeichnisse zuerst",
     "label": "Sortieren",

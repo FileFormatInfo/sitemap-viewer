@@ -24,6 +24,12 @@
     "es": "Spanish (Español)",
     "fr": "French (Français)"
   },
+  "ManagePage": {
+    "errors_link": "Errors",
+    "exit_link": "Exit Management",
+    "title": "Manage",
+    "usage_link": "Usage"
+  },
   "Sort": {
     "dirfirst": "Name, but directories first",
     "label": "Sort",

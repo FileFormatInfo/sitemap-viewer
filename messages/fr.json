@@ -24,6 +24,12 @@
     "fr": "Français",
     "es": "Espagnol (Español)"
   },
+  "ManagePage": {
+    "title": "Gérer",
+    "errors_link": "Erreurs",
+    "exit_link": "Quitter la gestion",
+    "usage_link": "Utilisation"
+  },
   "Sort": {
     "dirfirst": "Nom, mais répertoires en premier",
     "label": "Trier",

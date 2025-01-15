@@ -11,6 +11,7 @@ import { loadSitemap } from '@/lib/loadSitemap';
 import { SitemapEntry, TreeItem } from '@/lib/types';
 import { PoweredBy } from '@/components/PoweredBy';
 import { DEFAULT_TRANSFORM, getTransform } from '@/components/TransformSelect';
+import { trackUsage } from '@/lib/usage';
 
 export default async function View({
     searchParams,
@@ -37,6 +38,8 @@ export default async function View({
         defaultUrl.pathname = '/';
         returnUrl = defaultUrl.toString();
     }
+
+    trackUsage(url_str);
 
     const sme = await loadSitemap(url_str, { home });
     if (sort == "url") {
