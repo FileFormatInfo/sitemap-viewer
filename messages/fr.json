@@ -16,6 +16,7 @@
     "title": "Visionneuse de plan du site",
     "transform_label": "Transformation du nom de la page",
     "url_label": "URL de votre sitemap.xml",
+    "url_required": "URL est requise",
     "view_button": "Voir"
   },
   "LocaleSwitcher": {

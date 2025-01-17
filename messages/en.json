@@ -16,6 +16,7 @@
     "title": "Sitemap Viewer",
     "transform_label": "Page name transform",
     "url_label": "URL of your sitemap.xml",
+    "url_required": "URL is required",
     "view_button": "View"
   },
   "LocaleSwitcher": {

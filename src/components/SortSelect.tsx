@@ -3,6 +3,7 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useTranslations } from 'next-intl';
+import { UseFormRegisterReturn } from 'react-hook-form';
 
 type Sorts = (typeof sorts)[number];
 
@@ -13,7 +14,13 @@ const sorts = [
     'dirfirst'
 ] as const;
 
-export default function SortSelect() {
+type SortSelectProps = {
+    register: UseFormRegisterReturn<string>
+}
+
+const DEFAULT_SORT:Sorts = 'name';
+
+function SortSelect( { register }: SortSelectProps ) {
     const t = useTranslations('Sort');
 
     const sortedOptions = [...sorts].sort((a:Sorts, b:Sorts) => t(a).localeCompare(t(b)));
@@ -25,12 +32,12 @@ export default function SortSelect() {
             </InputLabel>
             <Select
                 native
-                defaultValue="original"
                 inputProps={{
                     name: 'sort',
                     id: 'sort',
                 }}
                 label={t('label')}
+                {...register}
             >
                 {sortedOptions.map((option) => (
                     <option key={option} value={option}>
@@ -40,4 +47,9 @@ export default function SortSelect() {
             </Select>
         </FormControl>
     );
+}
+
+export {
+    DEFAULT_SORT,
+    SortSelect,
 }

@@ -9,7 +9,7 @@ import { MdHome } from 'react-icons/md';
 
 import LocaleButton from '@/components/LocaleButton';
 
-export default function AdminLayout(props: { children: React.ReactNode }) {
+export default function ManageLayout(props: { children: React.ReactNode }) {
     const t = useTranslations('ManagePage');
 
     return (

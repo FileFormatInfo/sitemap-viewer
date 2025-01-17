@@ -16,6 +16,7 @@
     "title": "Visor de mapa del sitio",
     "transform_label": "Transformación del nombre de la página",
     "url_label": "URL de tu sitemap.xml",
+    "url_required": "URL es requerida",
     "view_button": "Ver"
   },
   "LocaleSwitcher": {

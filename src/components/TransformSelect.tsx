@@ -3,6 +3,7 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useTranslations } from 'next-intl';
+import { UseFormRegisterReturn } from 'react-hook-form';
 
 
 type Transform = (typeof transforms)[number]
@@ -24,7 +25,7 @@ function titleCase(s: string): string {
     return s.replace(/[^\p{Letter}\p{Number}]+/gu, ' ').split(/\s+/).map(titleCaseWord).join(' ');
 }
 
-const DEFAULT_TRANSFORM = transforms[2];
+const DEFAULT_TRANSFORM:Transform = 'initialcap';
 
 const transformMap = new Map<string, (s: string) => string>([
     ['initialcap', initialCap],
@@ -35,7 +36,11 @@ function getTransform(value: string): ((s: string) => string) | null {
     return transformMap.get(value) || null;
 }
 
-export default function TransformSelect() {
+type TransformSelectProps = {
+    register: UseFormRegisterReturn<string>
+}
+
+function TransformSelect({ register }: TransformSelectProps) {
     const t = useTranslations('Transform');
 
     const sortedOptions = [...transforms].sort((a:Transform, b:Transform) => t(a).localeCompare(t(b)));
@@ -53,6 +58,7 @@ export default function TransformSelect() {
                     id: 'transform',
                 }}
                 label={t('label')}
+                {...register}
             >
                 {sortedOptions.map((option) => (
                     <option key={option} value={option}>
@@ -65,6 +71,7 @@ export default function TransformSelect() {
 }
 
 export {
-    getTransform,
     DEFAULT_TRANSFORM,
+    getTransform,
+    TransformSelect,
 }

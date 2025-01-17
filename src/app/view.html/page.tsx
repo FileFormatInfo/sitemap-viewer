@@ -12,6 +12,7 @@ import { SitemapEntry, TreeItem } from '@/lib/types';
 import { PoweredBy } from '@/components/PoweredBy';
 import { DEFAULT_TRANSFORM, getTransform } from '@/components/TransformSelect';
 import { trackUsage } from '@/lib/usage';
+import { DEFAULT_SORT } from '@/components/SortSelect';
 
 export default async function View({
     searchParams,
@@ -21,7 +22,7 @@ export default async function View({
     const t = await getTranslations('ViewPage');
 
     const urlParams = (await searchParams);
-    const showDebug = getFirst(urlParams['showdebug'], '0') === '1';
+    let showDebug = getFirst(urlParams['showdebug'], '0') === '1';
     const showMode = getFirst(urlParams['showmode'], '0') === '1';
     const showExit = getFirst(urlParams['showexit'], '0') === '1';
     const showLanguage = getFirst(urlParams['showlanguage'], '0') === '1';
@@ -31,7 +32,7 @@ export default async function View({
     if (!url_str || url_str === constants.DEFAULT_SITEMAP_URL) {
         url_str = constants.DEMO_URL;
     }
-    const sort = getFirst(urlParams['sort'], 'original');
+    const sort = getFirst(urlParams['sort'], DEFAULT_SORT);
     let returnUrl = getFirst(urlParams['return'], '');
     if (returnUrl == '') {
         const defaultUrl = new URL(url_str);
@@ -41,20 +42,31 @@ export default async function View({
 
     trackUsage(url_str);
 
-    const sme = await loadSitemap(url_str, { home });
+    const sme = await loadSitemap(url_str);
     if (sort == "url") {
         sme.entries.sort((a, b) => { return a.url.localeCompare(b.url); });
     }
     const items = listToTree(sme.entries);
+
     const transformer = getTransform(getFirst(urlParams['transform'], DEFAULT_TRANSFORM));
     if (transformer) {
         transform(items, transformer);
+    }
+    // fix name of root page
+    for (const item of items) {
+        if (item.label == '') {
+            item.label = home;
+        }
     }
     if (sort == "name") {
         sortTreeName(items);
     } else if (sort == "dirfirst") {
         sortTreeDirFirst(items);
     }
+    if (!sme.success) {
+        showDebug = true;
+    }
+
     return (
         <>
         <Container maxWidth={false} disableGutters={true} sx={{ minHeight: '100vh' }}>
@@ -71,7 +83,7 @@ export default async function View({
                         width: '100%',
                     }}
                 >
-                    {sme.success ? <SitemapTreeView items={items} /> : <h1>Failed to load sitemap</h1>}
+                    {sme.success || items.length ? <SitemapTreeView items={items} /> : <h1>Failed to load sitemap</h1>}
                 </Box>
                 <PoweredBy />
             </Container>

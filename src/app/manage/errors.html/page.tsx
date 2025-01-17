@@ -18,7 +18,7 @@ export default function Errors() {
             <TableBody>
                 {entries.map((entry, index) => (
                     <TableRow key={`error-row-${index}`}>
-                        <TableCell>{`${dateFormat(entry.date)}`}</TableCell>
+                        <TableCell>{`${entry.date ? dateFormat(entry.date) : "Unknown"}`}</TableCell>
                         <TableCell>{entry.catcher}</TableCell>
                         <TableCell>{entry.message}</TableCell>
                         <TableCell>LATER</TableCell>

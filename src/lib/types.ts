@@ -13,7 +13,6 @@ type SitemapData = {
     messages: string[];
     sitemaps: string[];
     entries: SitemapEntry[];
-    translations: { [key: string]: string };
 };
 
 type TreeItem = {
