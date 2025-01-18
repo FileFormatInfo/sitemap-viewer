@@ -1,6 +1,6 @@
 import { getRequestConfig } from "next-intl/server";
 import { cookies, headers } from "next/headers";
-import { defaultLocale, locales } from "./config";
+import { defaultLocale, Locale, locales } from "./config";
 import { match } from "@formatjs/intl-localematcher";
 import { addError } from "@/lib/errorLog";
 
@@ -10,6 +10,8 @@ async function getHeaderLocale(): Promise<string | undefined> {
         return;
     }
 
+    console.log(`Accepted languages: "${accepted_str}"`);
+
     try {
         const accepted = accepted_str.split(',').map((str) => {
             const [locale] = str.split(';q=');
@@ -17,10 +19,11 @@ async function getHeaderLocale(): Promise<string | undefined> {
             //return [locale, parseFloat(q || '1')];
         });
 
-        const supported = match(locales, accepted, 'en');
-        if (supported && supported.length > 0) {
-            return supported[0];
-        }
+        console.log("parsed", accepted);
+
+        const matched = match(accepted, locales, 'en');
+        console.log("matched", matched);
+        return matched;
     } catch (err:unknown) {
         console.log('ERROR: unable to parse accept-language header', err, accepted_str);
         addError({
@@ -43,6 +46,11 @@ export default getRequestConfig(async () => {
 
     if (!locale) {
         console.log('locale not found in header (!)');  // should never happen for real browsers
+        locale = defaultLocale;
+    }
+
+    if (!locales.includes(locale as Locale)) {
+        console.log(`overriding invalid locale "${locale}" with default "${defaultLocale}"`);
         locale = defaultLocale;
     }
 
