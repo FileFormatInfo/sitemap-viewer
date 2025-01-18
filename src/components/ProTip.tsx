@@ -1,4 +1,5 @@
 import * as React from 'react';
+import NextLink from 'next/link';
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 import Typography from '@mui/material/Typography';
 import { useTranslations } from 'next-intl';
@@ -18,7 +19,7 @@ export default function ProTip() {
         <Typography sx={{ mt: 6, mb: 3, color: 'text.secondary' }}>
             {t.rich('tip', {
                 Icon: () => <LightBulbIcon sx={{ mr: 1, verticalAlign: 'middle' }} />,
-                Link: (chunks) => <a href="https://www.sitemap.style/">{chunks}</a>
+                Link: (chunks) => <NextLink href="https://www.sitemap.style/viewer-integration.html">{chunks}</NextLink>,
             })}
         </Typography>
     );
