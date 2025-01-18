@@ -13,6 +13,7 @@
     "show_log_label": "Afficher l'outil de journalisation",
     "show_mode_label": "Afficher l'outil clair/sombre",
     "sort_label": "Trier",
+    "tip": "<Icon></Icon>Voir <Link>Sitemap.Style</Link> pour intégrer ceci dans votre site Web.",
     "title": "Visionneuse de plan du site",
     "transform_label": "Transformation du nom de la page",
     "url_label": "URL de votre sitemap.xml",
@@ -22,14 +23,20 @@
   "LocaleSwitcher": {
     "de": "Allemand (Deutsch)",
     "en": "Anglais (English)",
-    "fr": "Français",
-    "es": "Espagnol (Español)"
+    "es": "Espagnol (Español)",
+    "fr": "Français"
   },
   "ManagePage": {
-    "title": "Gérer",
     "errors_link": "Erreurs",
     "exit_link": "Quitter la gestion",
+    "title": "Gérer",
     "usage_link": "Utilisation"
+  },
+  "ModeMenu": {
+    "current": "{mode} (actuel)",
+    "dark": "Sombre",
+    "light": "Clair",
+    "system": "Système"
   },
   "Sort": {
     "dirfirst": "Nom, mais répertoires en premier",

@@ -7,22 +7,23 @@ import { useColorScheme } from '@mui/material/styles';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
+import { useTranslations } from 'next-intl';
 
 type Mode = 'light' | 'dark' | 'system';    //LATER: import from ???
 
 type ModeItem = {
     value: Mode;
     icon: IconType;
-    label: string;
 }
 
 const modes: ModeItem[] = [
-    { value: "system", icon: MdOutlinePhonelink, label: "System" },
-    { value: "light", icon: MdLightMode, label: "Light" },
-    { value: "dark", icon: MdDarkMode, label: "Dark" },
+    { value: "system", icon: MdOutlinePhonelink },
+    { value: "light", icon: MdLightMode },
+    { value: "dark", icon: MdDarkMode },
 ];
 
 export default function ModeButton() {
+    const t = useTranslations('ModeMenu');
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -76,7 +77,7 @@ export default function ModeButton() {
                         <option.icon />
                     </ListItemIcon>
                     <ListItemText>
-                        {option.label} {option.value == mode ? "(current)" : ""}
+                        {option.value == mode ? t("current", { mode: t(option.value) }) : t(option.value)}
                     </ListItemText>
                 </MenuItem>
             ))

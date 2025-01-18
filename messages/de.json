@@ -13,6 +13,7 @@
     "show_log_label": "Protokollierungswerkzeug anzeigen",
     "show_mode_label": "Hell/Dunkel-Werkzeug anzeigen",
     "sort_label": "Sortieren",
+    "tip": "<Icon></Icon>Siehe <Link>Sitemap.Style</Link> für die Integration in Ihre Website.",
     "title": "Sitemap-Viewer",
     "transform_label": "Seitennamen-Transformation",
     "url_label": "URL Ihrer sitemap.xml",
@@ -26,10 +27,16 @@
     "fr": "Französisch (Français)"
   },
   "ManagePage": {
-    "title": "Verwalten",
     "errors_link": "Fehler",
     "exit_link": "Verwaltung beenden",
+    "title": "Verwalten",
     "usage_link": "Nutzung"
+  },
+  "ModeMenu": {
+    "current": "{mode} (aktuell)",
+    "dark": "Dunkel",
+    "light": "Hell",
+    "system": "System"
   },
   "Sort": {
     "dirfirst": "Name, aber Verzeichnisse zuerst",

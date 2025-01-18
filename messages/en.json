@@ -13,6 +13,7 @@
     "show_log_label": "Show Logging Tool",
     "show_mode_label": "Show Light/Dark Tool",
     "sort_label": "Sort",
+    "tip": "<Icon></Icon>See <Link>Sitemap.Style</Link> for how to integrate this into your website.",
     "title": "Sitemap Viewer",
     "transform_label": "Page name transform",
     "url_label": "URL of your sitemap.xml",
@@ -30,6 +31,12 @@
     "exit_link": "Exit Management",
     "title": "Manage",
     "usage_link": "Usage"
+  },
+  "ModeMenu": {
+    "current": "{mode} (current)",
+    "dark": "Dark",
+    "light": "Light",
+    "system": "System"
   },
   "Sort": {
     "dirfirst": "Name, but directories first",
