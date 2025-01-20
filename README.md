@@ -37,6 +37,7 @@ This is a graphical viewer for `sitemap.xml` files.  Try it at [Sitemap.Style](h
 
 ## To Do
 
+- [ ] structured logging
 - [ ] custom xml namespace: open/closed, allopen, style, title
 - [ ] label transforms: do not change if custom label
 - [ ] sort option `homefirst` to be name, but "Home" at top

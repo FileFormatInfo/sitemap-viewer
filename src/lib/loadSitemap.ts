@@ -62,7 +62,7 @@ async function processUrl(
         xml_resp = await fetch(url, {
             headers: {
                 "User-Agent": `Sitemap.style/1.0 (your sitemap is being viewed on https://view.sitemap.style/ )`,
-                Referer: `https://www.sitemap.style/api/sitemap.json`,
+                Referer: `https://view.sitemap.style/`,
             },
         });
 
