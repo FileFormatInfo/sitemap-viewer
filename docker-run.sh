@@ -11,9 +11,6 @@ docker build \
 	--tag sitemap-viewer \
 	.
 
-#	--no-cache \
-#exit 0
-
 docker run \
 	--env PORT=4000 \
 	--expose 4000 \
@@ -21,4 +18,4 @@ docker run \
 	--publish 4000:4000 \
 	--rm \
 	--tty \
-    sitemap-viewer
+	sitemap-viewer
