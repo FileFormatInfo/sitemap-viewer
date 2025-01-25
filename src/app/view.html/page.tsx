@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { getTranslations } from 'next-intl/server';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';

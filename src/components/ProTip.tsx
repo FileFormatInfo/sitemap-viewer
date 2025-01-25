@@ -1,4 +1,3 @@
-import * as React from 'react';
 import NextLink from 'next/link';
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 import Typography from '@mui/material/Typography';

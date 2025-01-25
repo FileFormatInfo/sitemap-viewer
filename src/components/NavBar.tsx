@@ -1,4 +1,3 @@
-import * as React from 'react';
 import NextLink from 'next/link';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';

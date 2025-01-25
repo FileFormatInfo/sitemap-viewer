@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Metadata } from 'next/types';
 import { useTranslations } from 'next-intl';
 import Container from '@mui/material/Container';
