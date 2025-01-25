@@ -1,7 +1,9 @@
 
 const isDevMode = process.env.NODE_ENV === 'development';
 
-const DEMO_URL = isDevMode ? "http://localhost:4000/demo.xml" : "https://view.sitemap.style/demo.xml";
+const DEMO_URL = isDevMode
+    ? "http://localhost:4000/demo.xml"
+    : "https://sitemap-viewer.fileformat.info/demo.xml";
 
 export const constants = {
     DEFAULT_HOME: "Home Page",

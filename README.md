@@ -1,10 +1,14 @@
-# Sitemap Viewer [<img alt="Sitemap Viewer logo" src="public/favicon.svg" height="90" align="right" />](https://view.sitemap.style/)
+# Sitemap Viewer [<img alt="Sitemap Viewer logo" src="public/favicon.svg" height="90" align="right" />](https://sitemap-viewer.fileformat.info/)
 
 [![NodePing status](https://img.shields.io/nodeping/status/9rpjcz1i-8nzx-442d-8yzk-tm7l5zfhbllw?label=Current%20status)](https://nodeping.com/reports/checks/9rpjcz1i-8nzx-442d-8yzk-tm7l5zfhbllw)
 [![NodePing uptime](https://img.shields.io/nodeping/uptime/9rpjcz1i-8nzx-442d-8yzk-tm7l5zfhbllw?label=30-day%20uptime)](https://nodeping.com/reports/uptime/9rpjcz1i-8nzx-442d-8yzk-tm7l5zfhbllw)
-[![deploy](https://github.com/fileformat/view.sitemap.style/actions/workflows/gcr-deploy.yaml/badge.svg)](https://github.com/fileformat/view.sitemap.style/actions/workflows/gcr-deploy.yaml)
+[![deploy](https://github.com/FileFormatInfo/sitemap-viewer/actions/workflows/gcr-deploy.yaml/badge.svg)](https://github.com/FileFormatInfo/sitemap-viewer/actions/workflows/gcr-deploy.yaml)
 
-This is a graphical viewer for `sitemap.xml` files.  Try it at [Sitemap.Style](https://www.sitemap.style/)!
+This is a graphical viewer for `sitemap.xml` files.  Try it at
+[sitemap-viewer.fileformat.info](https://sitemap-viewer.fileformat.info/).
+
+See how to integrate it into your `sitemap.xml` file so it displays automatically at
+[Sitemap.Style](https://www.sitemap.style/)!
 
 ## Running locally
 
