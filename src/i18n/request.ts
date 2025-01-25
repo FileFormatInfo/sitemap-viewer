@@ -1,6 +1,7 @@
 import { getRequestConfig } from "next-intl/server";
 import { cookies, headers } from "next/headers";
 import { defaultLocale, Locale, locales } from "./config";
+import Negotiator from "negotiator";
 import { match } from "@formatjs/intl-localematcher";
 import { addError } from "@/lib/errorLog";
 
@@ -9,19 +10,15 @@ async function getHeaderLocale(): Promise<string | undefined> {
     if (!accepted_str) {
         return;
     }
-
     console.log(`Accepted languages: "${accepted_str}"`);
 
     try {
-        const accepted = accepted_str.split(',').map((str) => {
-            const [locale] = str.split(';q=');
-            return locale;
-            //return [locale, parseFloat(q || '1')];
-        });
+        const headers = { 'accept-language': accepted_str };
+        const accepted = new Negotiator({ headers }).languages();
 
         console.log("parsed", accepted);
 
-        const matched = match(accepted, locales, 'en');
+        const matched = match(accepted, locales, defaultLocale);
         console.log("matched", matched);
         return matched;
     } catch (err:unknown) {
