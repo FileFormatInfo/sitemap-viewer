@@ -12,6 +12,7 @@ import { PoweredBy } from '@/components/PoweredBy';
 import { DEFAULT_TRANSFORM, getTransform } from '@/components/TransformSelect';
 import { trackUsage } from '@/lib/usage';
 import { DEFAULT_SORT } from '@/components/SortSelect';
+import { getBareHost } from '@/lib/getBareHost';
 
 export default async function View({
     searchParams,
@@ -25,12 +26,12 @@ export default async function View({
     const showMode = getFirst(urlParams['showmode'], '0') === '1';
     const showExit = getFirst(urlParams['showexit'], '0') === '1';
     const showLanguage = getFirst(urlParams['showlanguage'], '0') === '1';
-    const title = getFirst(urlParams['title'], t('title'));
     const home = getFirst(urlParams['home'], t('home'));
     let url_str = getFirst(urlParams['url'], constants.DEMO_URL);
     if (!url_str || url_str === constants.DEFAULT_SITEMAP_URL) {
         url_str = constants.DEMO_URL;
     }
+    const title = getFirst(urlParams['title'], t('title', { host: getBareHost(url_str) }));
     const sort = getFirst(urlParams['sort'], DEFAULT_SORT);
     let returnUrl = getFirst(urlParams['return'], '');
     if (returnUrl == '') {
@@ -67,7 +68,6 @@ export default async function View({
     }
 
     return (
-        <>
         <Container maxWidth={false} disableGutters={true} sx={{ minHeight: '100vh' }}>
                 <NavBar debug={showDebug} exit={showExit} language={showLanguage} messages={sme.messages} mode={showMode} title={title} returnUrl={returnUrl} />
             <Container
@@ -87,8 +87,6 @@ export default async function View({
                 <PoweredBy />
             </Container>
         </Container>
-        </>
-
     );
 }
 

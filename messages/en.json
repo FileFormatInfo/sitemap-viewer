@@ -54,6 +54,6 @@
   "ViewPage": {
     "home": "Home page",
     "poweredby": "Powered by Sitemap.Style",
-    "title": "Site Map"
+    "title": "{host} Site Map"
   }
 }

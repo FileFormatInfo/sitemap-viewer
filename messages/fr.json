@@ -54,6 +54,6 @@
   "ViewPage": {
     "home": "Page d'accueil",
     "poweredby": "Propulsé par Sitemap.Style",
-    "title": "Plan du site"
+    "title": "Plan du site pour {host}"
   }
 }
