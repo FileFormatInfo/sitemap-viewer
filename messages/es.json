@@ -24,7 +24,10 @@
     "de": "Alemán (Deutsch)",
     "en": "Inglés (English)",
     "es": "Español",
-    "fr": "Francesa (Français)"
+    "fr": "Francesa (Français)",
+    "it": "Italiano (Italiano)",
+    "pl": "Polaco (Polski)",
+    "pt": "Portugués (Português)"
   },
   "ManagePage": {
     "errors_link": "Errores",

@@ -1,0 +1,62 @@
+{
+  "Footer": {
+    "contact_link": "Kontakt",
+    "source_link": "Źródło"
+  },
+  "HomePage": {
+    "cancel_button": "Anuluj",
+    "demo_button": "Demo",
+    "return_help": "Domyślnie do katalogu głównego URL sitemap.xml",
+    "return_label": "URL powrotu (opcjonalnie)",
+    "show_exit_label": "Pokaż narzędzie wyjścia",
+    "show_language_label": "Pokaż wybór języka",
+    "show_log_label": "Pokaż narzędzie logowania",
+    "show_mode_label": "Pokaż narzędzie jasny/ciemny",
+    "sort_label": "Sortuj",
+    "tip": "<Icon></Icon>Zobacz <Link>Sitemap.Style</Link> jak zintegrować to na swojej stronie.",
+    "title": "Przeglądarka mapy witryny",
+    "transform_label": "Transformacja nazwy strony",
+    "url_label": "URL twojego sitemap.xml",
+    "url_required": "URL jest wymagany",
+    "view_button": "Zobacz"
+  },
+  "LocaleSwitcher": {
+    "de": "Niemiecki (Deutsch)",
+    "en": "Angielski (English)",
+    "es": "Hiszpański (Español)",
+    "fr": "Francuski (Français)",
+    "it": "Włoski (Italiano)",
+    "pl": "Polski",
+    "pt": "Portugalski (Português)"
+  },
+  "ManagePage": {
+    "errors_link": "Błędy",
+    "exit_link": "Zakończ zarządzanie",
+    "title": "Zarządzaj",
+    "usage_link": "Użycie"
+  },
+  "ModeMenu": {
+    "current": "{mode} (obecny)",
+    "dark": "Ciemny",
+    "light": "Jasny",
+    "system": "System"
+  },
+  "Sort": {
+    "dirfirst": "Nazwa, ale katalogi najpierw",
+    "label": "Sortuj",
+    "name": "Nazwa",
+    "original": "Oryginalny",
+    "url": "URL"
+  },
+  "Transform": {
+    "initialcap": "Pierwsza litera wielka, interpunkcja na spacje",
+    "label": "Transformacja nazwy strony",
+    "original": "Bez zmian",
+    "titlecase": "Tytułowe, interpunkcja na spacje"
+  },
+  "ViewPage": {
+    "home": "Strona główna",
+    "poweredby": "Zasilane przez Sitemap.Style",
+    "title": "Mapa witryny {host}"
+  }
+}

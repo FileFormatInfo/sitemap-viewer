@@ -1,0 +1,62 @@
+{
+  "Footer": {
+    "contact_link": "Contatto",
+    "source_link": "Fonte"
+  },
+  "HomePage": {
+    "cancel_button": "Annulla",
+    "demo_button": "Dimostrazione",
+    "return_help": "Predefinito alla radice dell'URL di sitemap.xml",
+    "return_label": "URL di ritorno (opzionale)",
+    "show_exit_label": "Mostra Strumento di Uscita",
+    "show_language_label": "Mostra Selettore di Lingua",
+    "show_log_label": "Mostra Strumento di Registrazione",
+    "show_mode_label": "Mostra Strumento Chiaro/Scuro",
+    "sort_label": "Ordina",
+    "tip": "<Icon></Icon>Vedi <Link>Sitemap.Style</Link> per come integrarlo nel tuo sito web.",
+    "title": "Visualizzatore di Sitemap",
+    "transform_label": "Trasformazione del nome della pagina",
+    "url_label": "URL del tuo sitemap.xml",
+    "url_required": "URL richiesto",
+    "view_button": "Visualizza"
+  },
+  "LocaleSwitcher": {
+    "de": "Tedesco (Deutsch)",
+    "en": "Inglese (English)",
+    "es": "Spagnolo (Español)",
+    "fr": "Francese (Français)",
+    "it": "Italiano",
+    "pl": "Polacco (Polski)",
+    "pt": "Portoghese (Português)"
+  },
+  "ManagePage": {
+    "errors_link": "Errori",
+    "exit_link": "Esci dalla Gestione",
+    "title": "Gestisci",
+    "usage_link": "Utilizzo"
+  },
+  "ModeMenu": {
+    "current": "{mode} (corrente)",
+    "dark": "Scuro",
+    "light": "Chiaro",
+    "system": "Sistema"
+  },
+  "Sort": {
+    "dirfirst": "Nome, ma prima le directory",
+    "label": "Ordina",
+    "name": "Nome",
+    "original": "Originale",
+    "url": "URL"
+  },
+  "Transform": {
+    "initialcap": "Prima lettera maiuscola, punteggiatura in spazi",
+    "label": "Trasformazione del nome della pagina",
+    "original": "Nessuna modifica",
+    "titlecase": "Titolo in maiuscolo, punteggiatura in spazi"
+  },
+  "ViewPage": {
+    "home": "Pagina iniziale",
+    "poweredby": "Offerto da Sitemap.Style",
+    "title": "Mappa del sito di {host}"
+  }
+}

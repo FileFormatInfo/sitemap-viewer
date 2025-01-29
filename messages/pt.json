@@ -1,0 +1,62 @@
+{
+  "Footer": {
+    "contact_link": "Contato",
+    "source_link": "Fonte"
+  },
+  "HomePage": {
+    "cancel_button": "Cancelar",
+    "demo_button": "Demonstração",
+    "return_help": "Padrão para a raiz do URL do sitemap.xml",
+    "return_label": "URL de Retorno (opcional)",
+    "show_exit_label": "Mostrar Ferramenta de Saída",
+    "show_language_label": "Mostrar Seletor de Idioma",
+    "show_log_label": "Mostrar Ferramenta de Registro",
+    "show_mode_label": "Mostrar Ferramenta de Modo Claro/Escuro",
+    "sort_label": "Ordenar",
+    "tip": "<Icon></Icon>Veja <Link>Sitemap.Style</Link> para saber como integrar isso ao seu site.",
+    "title": "Visualizador de Sitemap",
+    "transform_label": "Transformação do nome da página",
+    "url_label": "URL do seu sitemap.xml",
+    "url_required": "URL é obrigatório",
+    "view_button": "Visualizar"
+  },
+  "LocaleSwitcher": {
+    "de": "Alemão (Deutsch)",
+    "en": "Inglês (English)",
+    "es": "Espanhol (Español)",
+    "fr": "Francês (Français)",
+    "it": "Italiano (Italiano)",
+    "pl": "Polonês (Polski)",
+    "pt": "Português"
+  },
+  "ManagePage": {
+    "errors_link": "Erros",
+    "exit_link": "Sair da Gestão",
+    "title": "Gerenciar",
+    "usage_link": "Uso"
+  },
+  "ModeMenu": {
+    "current": "{mode} (atual)",
+    "dark": "Escuro",
+    "light": "Claro",
+    "system": "Sistema"
+  },
+  "Sort": {
+    "dirfirst": "Nome, mas diretórios primeiro",
+    "label": "Ordenar",
+    "name": "Nome",
+    "original": "Original",
+    "url": "URL"
+  },
+  "Transform": {
+    "initialcap": "Primeira letra maiúscula, pontuação para espaços",
+    "label": "Transformação do nome da página",
+    "original": "Sem alteração",
+    "titlecase": "Título em maiúsculas, pontuação para espaços"
+  },
+  "ViewPage": {
+    "home": "Página inicial",
+    "poweredby": "Desenvolvido por Sitemap.Style",
+    "title": "Mapa do Site de {host}"
+  }
+}
