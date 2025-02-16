@@ -18,7 +18,7 @@ export default function ProTip() {
         <Typography sx={{ mt: 6, mb: 3, textAlign: 'center', color: 'text.secondary' }}>
             {t.rich('tip', {
                 Icon: () => <LightBulbIcon sx={{ mr: 1, verticalAlign: 'middle' }} />,
-                Link: (chunks) => <NextLink href="https://www.sitemap.style/viewer-integration.html">{chunks}</NextLink>,
+                Link: (chunks) => <NextLink href="https://www.sitemap.style/">{chunks}</NextLink>,
             })}
         </Typography>
     );
