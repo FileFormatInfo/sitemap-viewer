@@ -8,7 +8,7 @@ This is a graphical viewer for `sitemap.xml` files.  Try it at
 [sitemap-viewer.fileformat.info](https://sitemap-viewer.fileformat.info/).
 
 See how to integrate it into your `sitemap.xml` file so it displays automatically at
-[Sitemap.Style](https://www.sitemap.style/)!
+[XML.Style](https://www.xml.style/sitemap/viewer-integration.html)!
 
 ## Running locally
 

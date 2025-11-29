@@ -13,7 +13,7 @@
     "show_log_label": "Show Logging Tool",
     "show_mode_label": "Show Light/Dark Tool",
     "sort_label": "Sort",
-    "tip": "<Icon></Icon>See <Link>Sitemap.Style</Link> for how to integrate this into your website.",
+    "tip": "<Icon></Icon>See <Link>XML.Style</Link> for how to integrate this into your website.",
     "title": "Sitemap Viewer",
     "transform_label": "Page name transform",
     "url_label": "URL of your sitemap.xml",
@@ -56,7 +56,7 @@
   },
   "ViewPage": {
     "home": "Home page",
-    "poweredby": "Powered by Sitemap.Style",
+    "poweredby": "Powered by XML.Style",
     "title": "{host} Site Map"
   }
 }

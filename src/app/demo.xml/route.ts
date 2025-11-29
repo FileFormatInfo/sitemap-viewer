@@ -28,7 +28,7 @@ export function GET() {
     const xmlStr = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${urls
-        .map((entry) => `\t<url>\n\t\t<loc>https://demo.sitemap.style${entry.loc}</loc>\n</url>\n`)
+        .map((entry) => `\t<url>\n\t\t<loc>https://demo.xml.style${entry.loc}</loc>\n</url>\n`)
         .join("\n")}
 </urlset>
     `;

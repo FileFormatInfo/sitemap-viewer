@@ -14,7 +14,7 @@ function findTitle(entry: any): string {
         return entry["video:video"]["video:title"];
     }
 
-    // sitemap.style extension
+    // xml.style extension
     if (entry["style:title"]) {
         return entry["style:title"];
     }

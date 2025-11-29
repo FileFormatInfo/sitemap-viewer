@@ -13,7 +13,7 @@
     "show_log_label": "Pokaż narzędzie logowania",
     "show_mode_label": "Pokaż narzędzie jasny/ciemny",
     "sort_label": "Sortuj",
-    "tip": "<Icon></Icon>Zobacz <Link>Sitemap.Style</Link> jak zintegrować to na swojej stronie.",
+    "tip": "<Icon></Icon>Zobacz <Link>XML.Style</Link> jak zintegrować to na swojej stronie.",
     "title": "Przeglądarka mapy witryny",
     "transform_label": "Transformacja nazwy strony",
     "url_label": "URL twojego sitemap.xml",
@@ -56,7 +56,7 @@
   },
   "ViewPage": {
     "home": "Strona główna",
-    "poweredby": "Zasilane przez Sitemap.Style",
+    "poweredby": "Zasilane przez XML.Style",
     "title": "Mapa witryny {host}"
   }
 }

@@ -77,7 +77,7 @@ export default function ConfigForm() {
                 <Button color="success" variant="contained" type="submit">
                     {t("view_button")}
                 </Button>
-                <Button color="success" variant="outlined" component={NextLink} href="https://www.sitemap.style/">
+                <Button color="success" variant="outlined" component={NextLink} href="https://www.xml.style/sitemap/">
                     {t("cancel_button")}
                 </Button>
                 <Stack direction="row" flex="1" justifyContent="flex-end" spacing={2} sx={{ backgroundColor: 'transparent' }}>

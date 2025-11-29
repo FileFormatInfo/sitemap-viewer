@@ -13,7 +13,7 @@
     "show_log_label": "Mostrar Ferramenta de Registro",
     "show_mode_label": "Mostrar Ferramenta de Modo Claro/Escuro",
     "sort_label": "Ordenar",
-    "tip": "<Icon></Icon>Veja <Link>Sitemap.Style</Link> para saber como integrar isso ao seu site.",
+    "tip": "<Icon></Icon>Veja <Link>XML.Style</Link> para saber como integrar isso ao seu site.",
     "title": "Visualizador de Sitemap",
     "transform_label": "Transformação do nome da página",
     "url_label": "URL do seu sitemap.xml",
@@ -56,7 +56,7 @@
   },
   "ViewPage": {
     "home": "Página inicial",
-    "poweredby": "Desenvolvido por Sitemap.Style",
+    "poweredby": "Desenvolvido por XML.Style",
     "title": "Mapa do Site de {host}"
   }
 }

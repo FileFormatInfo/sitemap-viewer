@@ -13,7 +13,7 @@
     "show_log_label": "Protokollierungswerkzeug anzeigen",
     "show_mode_label": "Hell/Dunkel-Werkzeug anzeigen",
     "sort_label": "Sortieren",
-    "tip": "<Icon></Icon>Siehe <Link>Sitemap.Style</Link> für die Integration in Ihre Website.",
+    "tip": "<Icon></Icon>Siehe <Link>XML.Style</Link> für die Integration in Ihre Website.",
     "title": "Sitemap-Viewer",
     "transform_label": "Seitennamen-Transformation",
     "url_label": "URL Ihrer sitemap.xml",
@@ -56,7 +56,7 @@
   },
   "ViewPage": {
     "home": "Startseite",
-    "poweredby": "Angetrieben durch Sitemap.Style",
+    "poweredby": "Angetrieben durch XML.Style",
     "title": "Sitemap für {host}"
   }
 }

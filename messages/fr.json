@@ -13,7 +13,7 @@
     "show_log_label": "Afficher l'outil de journalisation",
     "show_mode_label": "Afficher l'outil clair/sombre",
     "sort_label": "Trier",
-    "tip": "<Icon></Icon>Voir <Link>Sitemap.Style</Link> pour intégrer ceci dans votre site Web.",
+    "tip": "<Icon></Icon>Voir <Link>XML.Style</Link> pour intégrer ceci dans votre site Web.",
     "title": "Visionneuse de plan du site",
     "transform_label": "Transformation du nom de la page",
     "url_label": "URL de votre sitemap.xml",
@@ -56,7 +56,7 @@
   },
   "ViewPage": {
     "home": "Page d'accueil",
-    "poweredby": "Propulsé par Sitemap.Style",
+    "poweredby": "Propulsé par XML.Style",
     "title": "Plan du site pour {host}"
   }
 }
